@@ -3,12 +3,15 @@ package storage
 import "fmt"
 import "github.com/wisperwindoxas/storage/internal/file"
 
-type Storage struct {}
+type Storage struct {
+	File map[uuid.UUID] *file.File
+}
 
 
 func NewStorage() *Storage {
-	fmt.Println("Some storage")
-	return &Storage{}
+	return &Storage{
+		
+	}
 }
 
 
@@ -21,4 +24,8 @@ func (s *Storage) Upload(filename string, blob []byte) (*file.File, error) {
 
 	// return newFile
 
+}
+
+func (s *Storage) GetByID(fileID uuuid.UUID) (*file.File, error) {
+	
 }
